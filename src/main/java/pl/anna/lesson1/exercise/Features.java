@@ -23,4 +23,13 @@ public class Features {
     public String getSex() {
         return sex;
     }
+
+    @Override
+    public String toString() {
+        return "Features{" +
+                "eyes='" + eyes + '\'' +
+                ", height=" + height +
+                ", sex='" + sex + '\'' +
+                '}';
+    }
 }

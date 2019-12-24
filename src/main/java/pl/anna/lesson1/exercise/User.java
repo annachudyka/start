@@ -23,15 +23,33 @@ public class User {
         return name;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
+        return address;
+    }
+
+    public Features getFeatures() {
+        return features;
+    }
+
+    public String getAddressDetails() {
         return address.getCity()+address.getPostCode()+address.getStreet();
     }
 
-    public String getFeatures() {
-        return features.getEyes()+features.getHeight()+getFeatures()+features.getSex();
+    public String getFeaturesDetails() {
+        return features.getEyes()+features.getHeight()+features.getSex();
     }
 
     public String getExpirationDate() {
         return expirationDate.getDate();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", address=" + address +
+                ", features=" + features +
+                ", expirationDate=" + expirationDate +
+                '}';
     }
 }

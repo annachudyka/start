@@ -1,5 +1,7 @@
 package pl.anna.lesson1.exercise;
 
+import java.util.Arrays;
+
 public class Identity {
 
     private User[] users;
@@ -10,5 +12,12 @@ public class Identity {
 
     public User[] getUsers() {
         return users;
+    }
+
+    @Override
+    public String toString() {
+        return "Identity{" +
+                "users=" + Arrays.toString(users) +
+                '}';
     }
 }
