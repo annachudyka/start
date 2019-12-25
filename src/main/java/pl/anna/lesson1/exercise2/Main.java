@@ -8,8 +8,14 @@ public class Main {
         item.spendPieces(5);
         item.printItemDetails();
         System.out.println("=====");
-        item.spendPieces(6);
+        item.spendPieces(7);
         item.printItemDetails();
+        System.out.println("=====");
+        item.spendPieces(5);
+        item.printItemDetails();
+
+        Quantity quantity=new Quantity();
+        quantity.countQuantity(10);
 
     }
 

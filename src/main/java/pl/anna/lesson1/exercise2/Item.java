@@ -5,8 +5,8 @@ public class Item {
     private String name;
     private Category category;
     private Stock stock;
-    private int quantity;
     private int currentQuantity;
+    private int quantity;
 
 
 
@@ -15,36 +15,35 @@ public class Item {
         this.category=category;
         this.stock=stock;
     }
-    public Item(int currentQuantity){
-        this.currentQuantity=currentQuantity;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void spendPieces(int quantity){
 
+    currentQuantity=currentQuantity-quantity;
+    currentQuantity=currentQuantity-0;
+
+
+    public void spendPieces(int quantity){
         this.quantity=quantity;
 
+
         System.out.println("Próba wydania "+quantity+" sztuk");
-    }
 
-    public void printItemDetails() {
-
-        int currentQuantity = stock.getQuantity() - quantity;
-
-        if (currentQuantity < quantity) {
+        if (currentQuantity< quantity) {
             System.out.println("Liczba sztuk przekracza aktualny stan, nie można wydać");
-            System.out.println("Ilość stanu: 0");
+            System.out.println("Wydano: 0");
+
         } else {
             System.out.println("Wydano " + quantity + " sztuki");
-            System.out.println("Nazwa: " + name);
-            System.out.println("Nazwa kategorii: " + category.getName());
-            System.out.println("Ilość stanu: " + currentQuantity + "/" + stock.getQuantity());
         }
     }
 
+    public void printItemDetails() {
+            System.out.println("Nazwa: " + name);
+            System.out.println("Nazwa kategorii: " + category.getName());
+            System.out.println("Ilość stanu: " +currentQuantity + "/" + stock.getQuantity());
+    }
 
     @Override
     public String toString() {
@@ -52,7 +51,7 @@ public class Item {
                 "name='" + name + '\'' +
                 ", category=" + category +
                 ", stock=" + stock +
-                ", quantity=" + quantity +
+                ", finalQuantity=" + finalQuantity +
                 '}';
     }
 }
