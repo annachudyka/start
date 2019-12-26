@@ -10,6 +10,7 @@ public class Item {
 
 
 
+
     public Item(String name, Category category, Stock stock){
         this.name=name;
         this.category=category;
@@ -18,14 +19,16 @@ public class Item {
     public String getName() {
         return name;
     }
-
-
-    currentQuantity=currentQuantity-quantity;
-    currentQuantity=currentQuantity-0;
-
-
-    public void spendPieces(int quantity){
+    public void countQuantity(int quantity){
         this.quantity=quantity;
+
+        currentQuantity=currentQuantity-quantity;
+    }
+    public void displayAllFields(){
+        System.out.println(name+currentQuantity+quantity);
+
+    }
+    public void spendPieces(int quantity){
 
 
         System.out.println("Próba wydania "+quantity+" sztuk");
@@ -51,7 +54,7 @@ public class Item {
                 "name='" + name + '\'' +
                 ", category=" + category +
                 ", stock=" + stock +
-                ", finalQuantity=" + finalQuantity +
+                ", finalQuantity=" + currentQuantity +
                 '}';
     }
 }
